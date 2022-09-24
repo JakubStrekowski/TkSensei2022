@@ -34,7 +34,7 @@ public class SongCreator : MonoBehaviour
 
     public void SaveCurrentSong()
     {
-        song.duration = Time.time;
+        song.duration = Time.timeSinceLevelLoad;
         song.Save();
     }
 

@@ -24,7 +24,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started)
         {
-            Debug.Log("Right Drum Hit: " + Time.time);
+            Debug.Log("Right Drum Hit: " + Time.timeSinceLevelLoad);
             Note newNote = songCreator.AddNewNote(EDrumType.Right);
             songPresenter.InstantiateNote(newNote, EDrumType.Right);
             audioPlayer.PlayRight();
@@ -51,7 +51,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started)
         {
-            Debug.Log("Song Saved: " + Time.time);
+            Debug.Log("Song Saved: " + Time.timeSinceLevelLoad);
             songCreator.SaveCurrentSong();
         }
     }
