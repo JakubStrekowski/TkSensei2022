@@ -15,3 +15,4 @@ MonoBehaviour:
   perfectTreshold: 0.15
   missThreshold: 0.3
   eagerThreshold: 0.35
+  moveSpeed: 5

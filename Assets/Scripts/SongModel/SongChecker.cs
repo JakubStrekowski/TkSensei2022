@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Points;
+using TMPro;
 using UnityEngine;
 
 public class SongChecker : MonoBehaviour
@@ -18,8 +20,13 @@ public class SongChecker : MonoBehaviour
     private Note[] currentNotes = new Note[(int)EDrumType.Count];
     private int currentLeftId;
     private int currentRightId;
-
-
+    private bool hasFinished = false;
+    
+    public LeaderboardManager leaderboardManager;
+    public TMP_Text finalScore;
+    public TMP_InputField nameInput;
+    public GameObject submitPanel;
+    public GameObject highScorePanel;
 
     private void Awake() 
     {
@@ -34,6 +41,14 @@ public class SongChecker : MonoBehaviour
     {
         songPresenter.InstantiateNotes(song, timeBeforeStart);
         pointCounter.StartCounter(song.leftNotes.Count + song.rightNotes.Count);
+    }
+
+    public void Submit()
+    {
+        PlayerScore newScore = new PlayerScore(nameInput.text, pointCounter.CurrentScore, pointCounter.RatioScore);
+        leaderboardManager.AddScore(newScore);
+        submitPanel.SetActive(false);
+        highScorePanel.SetActive(true);
     }
 
     public void CheckDrumHit(EDrumType drumType)
@@ -109,6 +124,29 @@ public class SongChecker : MonoBehaviour
                 currentNotes[(int)drumType].OnIncorrect();
                 FindNextNote((EDrumType)drumType);
             }
+        }
+
+        if (currentNotes[(int)EDrumType.Left] == null && 
+            currentNotes[(int)EDrumType.Right] == null &&
+            !hasFinished)
+        {
+            hasFinished = true;
+            StartCoroutine(nameof(WaitBeforeFinish));
+        }
+    }
+
+    private IEnumerator WaitBeforeFinish()
+    {
+        yield return new WaitForSeconds(2);
+        finalScore.text = pointCounter.CurrentScore.ToString();
+        PlayerScore newScore = new PlayerScore("Name", pointCounter.CurrentScore, pointCounter.RatioScore);
+        if (leaderboardManager.IsNewScore(newScore))
+        {
+            submitPanel.SetActive(true);
+        }
+        else
+        {
+            highScorePanel.SetActive(false);
         }
     }
 }
