@@ -45,7 +45,7 @@ public class SongChecker : MonoBehaviour
 
     public void Submit()
     {
-        PlayerScore newScore = new PlayerScore(nameInput.text, pointCounter.CurrentScore);
+        PlayerScore newScore = new PlayerScore(nameInput.text, pointCounter.CurrentScore, pointCounter.RatioScore);
         leaderboardManager.AddScore(newScore);
         submitPanel.SetActive(false);
         highScorePanel.SetActive(true);
@@ -139,7 +139,7 @@ public class SongChecker : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         finalScore.text = pointCounter.CurrentScore.ToString();
-        PlayerScore newScore = new PlayerScore("Name", pointCounter.CurrentScore);
+        PlayerScore newScore = new PlayerScore("Name", pointCounter.CurrentScore, pointCounter.RatioScore);
         if (leaderboardManager.IsNewScore(newScore))
         {
             submitPanel.SetActive(true);

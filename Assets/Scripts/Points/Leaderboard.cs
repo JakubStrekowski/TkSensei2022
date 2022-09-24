@@ -14,11 +14,13 @@ namespace Points
     {
         public string Name;
         public int Score;
+        public string Progress;
 
-        public PlayerScore(string name, int score)
+        public PlayerScore(string name, int score, float progress)
         {
             Name = name;
             Score = score;
+            Progress = String.Format("{0:0.00}%", progress * 100f);
         }
     }
 }
