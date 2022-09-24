@@ -1,0 +1,74 @@
+{
+    "name": "InputActions",
+    "maps": [
+        {
+            "name": "CreateSong",
+            "id": "931a63a2-7fd5-4f6d-96dc-3937b2b6b1a9",
+            "actions": [
+                {
+                    "name": "HitLeftDrum",
+                    "type": "Button",
+                    "id": "5f540d9b-e703-4aa0-bedc-5560deabe2da",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HitRightDrum",
+                    "type": "Button",
+                    "id": "27d5a8fd-8e1c-45fc-9e0d-bcfc371f3038",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SaveSong",
+                    "type": "Button",
+                    "id": "b68eabac-5a58-4b47-9c9a-6d29e2a037c2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b49396d1-7136-42ba-86e2-8adb68e65bce",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HitLeftDrum",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1047be56-8d8c-473d-826f-90e7a0c9e489",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HitRightDrum",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b218cf31-f0dd-4885-86de-66790552ab67",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SaveSong",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
