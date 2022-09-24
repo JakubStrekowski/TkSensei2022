@@ -8,6 +8,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] SongChecker songChecker;
     [SerializeField] SongCreator songCreator;
     [SerializeField] SongPresenter songPresenter;
+    [SerializeField] AudioPlayer audioPlayer;
     public void OnHitLeftDrum(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Started)
@@ -15,6 +16,7 @@ public class PlayerInput : MonoBehaviour
             Debug.Log("Left Drum Hit: " + Time.time);
             Note newNote = songCreator.AddNewNote(EDrumType.Left);
             songPresenter.InstantiateNote(newNote, EDrumType.Left);
+            audioPlayer.PlayLeft();
         }
 
     }
@@ -25,6 +27,7 @@ public class PlayerInput : MonoBehaviour
             Debug.Log("Right Drum Hit: " + Time.time);
             Note newNote = songCreator.AddNewNote(EDrumType.Right);
             songPresenter.InstantiateNote(newNote, EDrumType.Right);
+            audioPlayer.PlayRight();
         }
     }
     public void OnCheckLeftDrum(InputAction.CallbackContext context)
@@ -32,6 +35,7 @@ public class PlayerInput : MonoBehaviour
         if (context.phase == InputActionPhase.Started)
         {
             songChecker.CheckDrumHit(EDrumType.Left);
+            audioPlayer.PlayLeft();
         }
 
     }
@@ -40,6 +44,7 @@ public class PlayerInput : MonoBehaviour
         if (context.phase == InputActionPhase.Started)
         {
             songChecker.CheckDrumHit(EDrumType.Right);
+            audioPlayer.PlayRight();
         }
     }
     public void OnSaveSong(InputAction.CallbackContext context)
