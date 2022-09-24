@@ -11,9 +11,7 @@ public class SongChecker : MonoBehaviour
     public string FileName = "CreatedSong.json";
     public string Path => Directory + FileName;
 
-    public float perfectTreshold = 0.05f;
-    public float missThreshold = 0.10f;
-    public float eagerThreshold = 0.10f;
+    public SongDifficultySO difficultySO;
     public Song song;
 
     [SerializeField] private PointCounter pointCounter;
@@ -47,8 +45,8 @@ public class SongChecker : MonoBehaviour
             return;
         }
 
-        if (Time.time < currentNotes[(int)drumType].time + perfectTreshold &&
-            Time.time > currentNotes[(int)drumType].time - perfectTreshold)
+        if (Time.time < currentNotes[(int)drumType].time + difficultySO.perfectTreshold &&
+            Time.time > currentNotes[(int)drumType].time - difficultySO.perfectTreshold)
             {
                 pointCounter.RegisterPerfectNote();
                 currentNotes[(int)drumType].isHit = true;
@@ -58,8 +56,8 @@ public class SongChecker : MonoBehaviour
             }
         else 
         {
-            if (Time.time < currentNotes[(int)drumType].time + eagerThreshold &&
-                Time.time > currentNotes[(int)drumType].time - missThreshold)
+            if (Time.time < currentNotes[(int)drumType].time + difficultySO.eagerThreshold &&
+                Time.time > currentNotes[(int)drumType].time - difficultySO.missThreshold)
             {
                 pointCounter.RegisterGoodNote();
                 currentNotes[(int)drumType].isHit = true;
@@ -67,7 +65,7 @@ public class SongChecker : MonoBehaviour
                 currentNotes[(int)drumType].OnCorrect();
                 FindNextNote(drumType);
             }
-            else if (!(Time.time < currentNotes[(int)drumType].time + eagerThreshold))
+            else if (!(Time.time < currentNotes[(int)drumType].time + difficultySO.eagerThreshold))
             {
                 pointCounter.RegisterMissedNote();
                 Debug.Log("Missed: " + Time.time + " vs. " + currentNotes[(int)drumType].time);
@@ -103,7 +101,7 @@ public class SongChecker : MonoBehaviour
         {
             if (currentNotes[drumType] == null) continue;
 
-            if (Time.time > currentNotes[drumType].time + eagerThreshold)
+            if (Time.time > currentNotes[drumType].time + difficultySO.eagerThreshold)
             {
                 pointCounter.RegisterSkippedNote();
                 Debug.Log("Skipped: " + Time.time + " vs. " + currentNotes[(int)drumType].time);
