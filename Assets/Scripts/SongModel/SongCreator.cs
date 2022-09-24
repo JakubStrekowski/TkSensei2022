@@ -18,13 +18,13 @@ public class SongCreator : MonoBehaviour
             default:
             case EDrumType.Left:
             {
-                note = new Note(Mathf.Round(Time.time * 16) / 16);
+                note = new Note(Mathf.Round(Time.timeSinceLevelLoad * 16) / 16);
                 song.leftNotes.Add(note);
                 break;
             }
             case EDrumType.Right:
             {
-                note = new Note(Mathf.Round(Time.time * 16) / 16);
+                note = new Note(Mathf.Round(Time.timeSinceLevelLoad * 16) / 16);
                 song.rightNotes.Add(note);
                 break;
             }

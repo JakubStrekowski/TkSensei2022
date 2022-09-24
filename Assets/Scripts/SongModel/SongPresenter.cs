@@ -85,7 +85,7 @@ public class SongPresenter : MonoBehaviour
     private void Update() 
     {
         notesAnchor.transform.position = new Vector3(
-            anchorStartPos + ((float)direction * moveSpeed * Time.time),
+            anchorStartPos + ((float)direction * moveSpeed * Time.timeSinceLevelLoad),
             notesAnchor.transform.position.y,
             notesAnchor.transform.position.z);
     }

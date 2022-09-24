@@ -19,6 +19,10 @@ public class PointCounter : MonoBehaviour
 
     public void StartCounter(int numberOfNotes)
     {
+        PerfectNotes = 0;
+        GoodNotes = 0;
+        MissedNotes = 0;
+        SkippedNotes = 0;
         NumberOfNotes = numberOfNotes;
         MaxScore = NumberOfNotes * Config.PerfectNoteScore;
     }

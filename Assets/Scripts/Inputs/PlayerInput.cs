@@ -13,7 +13,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started)
         {
-            Debug.Log("Left Drum Hit: " + Time.time);
+            Debug.Log("Left Drum Hit: " + Time.timeSinceLevelLoad);
             Note newNote = songCreator.AddNewNote(EDrumType.Left);
             songPresenter.InstantiateNote(newNote, EDrumType.Left);
             audioPlayer.PlayLeft();

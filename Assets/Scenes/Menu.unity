@@ -640,7 +640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f2cfbc81744013b39a180f8e19c41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameScene: 
+  GameScene: GamePlayScene
 --- !u!4 &471424619
 Transform:
   m_ObjectHideFlags: 0
