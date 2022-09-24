@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8306abefa09c49a58757d98b9eff41c6, type: 3}
   m_Name: PointCountConfig
   m_EditorClassIdentifier: 
-  PerfectNoteScore: 0
-  GoodNoteScore: 0
-  MissedNoteScore: 0
-  SkippedNoteScore: 0
+  PerfectNoteScore: 5
+  GoodNoteScore: 3
+  MissedNoteScore: -1
+  SkippedNoteScore: -2

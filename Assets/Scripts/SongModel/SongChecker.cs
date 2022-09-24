@@ -33,6 +33,7 @@ public class SongChecker : MonoBehaviour
     private void Start() 
     {
         songPresenter.InstantiateNotes(song, timeBeforeStart);
+        pointCounter.StartCounter(song.leftNotes.Count + song.rightNotes.Count);
     }
 
     public void CheckDrumHit(EDrumType drumType)
