@@ -25,51 +25,59 @@ public class SongPresenter : MonoBehaviour
     {
         anchorStartPos = notesAnchor.transform.position.x;
     }
-    public void InstantiateNotes(Song song)
+    public void InstantiateNotes(Song song, float timeBeforeStart)
     {
+        GameObject newObj;
         foreach (Note note in song.leftNotes)
         {
-            Instantiate(leftNotePrefab, 
+            note.time += timeBeforeStart;
+            newObj = Instantiate(leftNotePrefab, 
                 new Vector3(
                     (notesAnchor.transform.position.x - (float)direction * moveSpeed * note.time),
                     leftNotesParent.position.y,
                     leftNotesParent.position.z), 
                 Quaternion.identity, 
                 leftNotesParent);
+            note.presenterReference = newObj.GetComponent<SpriteRenderer>();
         }
         foreach (Note note in song.rightNotes)
         {
-            Instantiate(rightNotePrefab, 
+            note.time += timeBeforeStart;
+            newObj = Instantiate(rightNotePrefab, 
                 new Vector3(
                     (notesAnchor.transform.position.x - (float)direction * moveSpeed * note.time),
-                    leftNotesParent.position.y,
-                    leftNotesParent.position.z), 
+                    rightNotesParent.position.y,
+                    rightNotesParent.position.z), 
                 Quaternion.identity, 
                 rightNotesParent);
+            note.presenterReference = newObj.GetComponent<SpriteRenderer>();
         }
     }
 
     public void InstantiateNote(Note note, EDrumType input)
     {
+        GameObject newObj;
         switch(input)
         {
             case EDrumType.Left:
-                Instantiate(leftNotePrefab, 
+                newObj = Instantiate(leftNotePrefab, 
                     new Vector3(
                         (notesAnchor.transform.position.x - (float)direction * moveSpeed * note.time),
                         leftNotesParent.position.y,
                         leftNotesParent.position.z), 
                     Quaternion.identity, 
                     leftNotesParent);
+                note.presenterReference = newObj.GetComponent<SpriteRenderer>();
                 break;
             case EDrumType.Right:
-                Instantiate(rightNotePrefab, 
+                newObj = Instantiate(rightNotePrefab, 
                     new Vector3(
                         (notesAnchor.transform.position.x - (float)direction * moveSpeed * note.time),
                         rightNotesParent.position.y,
                         rightNotesParent.position.z), 
                     Quaternion.identity, 
                     rightNotesParent);
+                note.presenterReference = newObj.GetComponent<SpriteRenderer>();
                 break;
         }
     }

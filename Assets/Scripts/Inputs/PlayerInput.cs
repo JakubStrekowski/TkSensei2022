@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
+    [SerializeField] SongChecker songChecker;
     [SerializeField] SongCreator songCreator;
     [SerializeField] SongPresenter songPresenter;
     public void OnHitLeftDrum(InputAction.CallbackContext context)
@@ -24,6 +25,21 @@ public class PlayerInput : MonoBehaviour
             Debug.Log("Right Drum Hit: " + Time.time);
             Note newNote = songCreator.AddNewNote(EDrumType.Right);
             songPresenter.InstantiateNote(newNote, EDrumType.Right);
+        }
+    }
+    public void OnCheckLeftDrum(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            songChecker.CheckDrumHit(EDrumType.Left);
+        }
+
+    }
+    public void OnCheckRightDrum(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            songChecker.CheckDrumHit(EDrumType.Right);
         }
     }
     public void OnSaveSong(InputAction.CallbackContext context)
