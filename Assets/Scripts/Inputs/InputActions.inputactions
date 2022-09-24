@@ -47,8 +47,30 @@
                 },
                 {
                     "name": "",
+                    "id": "ce9e34cc-4e0b-42ad-9b97-bef3af79d66d",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HitLeftDrum",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1047be56-8d8c-473d-826f-90e7a0c9e489",
                     "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HitRightDrum",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2ea2a6d9-2d92-434a-bb69-92ac60dab7ec",
+                    "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
