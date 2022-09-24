@@ -93,6 +93,7 @@ namespace Points
                 
                 UserNamesTxt[i].text = CurrentLeaderboard.Scores[i].Name;
                 ScoresTxt[i].text = CurrentLeaderboard.Scores[i].Score.ToString();
+                AccuraciesTxt[i].text = CurrentLeaderboard.Scores[i].Progress.ToString();
             }
         }
     }

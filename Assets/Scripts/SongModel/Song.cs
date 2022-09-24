@@ -7,7 +7,7 @@ using UnityEngine;
 [Serializable]
 public class Song
 {
-    public static string Directory => Application.persistentDataPath + "/Songs/";
+    public static string Directory => Application.dataPath + "/Resources/";
     [System.NonSerialized] public string FileName = "CreatedSong.json";
     public string Path => Directory + FileName;
 

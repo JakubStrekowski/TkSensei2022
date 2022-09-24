@@ -9,7 +9,7 @@ public class SongChecker : MonoBehaviour
 {
     public float timeBeforeStart = 3.0f;
     public SongPresenter songPresenter;
-    public static string Directory => Application.persistentDataPath + "/Songs/";
+    public static string Directory => Application.dataPath + "/Resources/";
     public string FileName = "CreatedSong.json";
     public string Path => Directory + FileName;
 
