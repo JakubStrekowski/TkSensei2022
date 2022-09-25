@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 
 public enum MenuButtons
 {
@@ -19,12 +19,18 @@ namespace Menu
         public RectTransform stone;
 
         public RectTransform[] buttons;
+        public GameObject creditsPanel;
+
+        public GameObject optionsPanel;
+
+        public Slider volumeSlider;
 
         public Vector3 originalPos;
 
         private void Start() 
         {
             originalPos = stone.position;
+            volumeSlider.value = AudioListener.volume;
         }
 
         private void StartGame()
@@ -38,11 +44,16 @@ namespace Menu
         }
         private void CreditsAction()
         {
-            Debug.Log("Credits opened");
+            creditsPanel.SetActive(true);
         }
         private void OptionAction()
         {
-            Debug.Log("Options opened");
+            optionsPanel.SetActive(true);
+        }
+
+        public void SetMasterVolume()
+        {
+            AudioListener.volume = volumeSlider.value;
         }
 
         public void StartClick()
