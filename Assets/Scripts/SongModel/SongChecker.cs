@@ -155,7 +155,8 @@ public class SongChecker : MonoBehaviour
         }
         else
         {
-            highScorePanel.SetActive(false);
+            leaderboardManager.UpdateScores();
+            highScorePanel.SetActive(true);
         }
     }
 }
