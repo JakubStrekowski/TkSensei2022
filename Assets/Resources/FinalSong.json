@@ -1,46 +1,295 @@
 {
     "leftNotes": [
         {
-            "time": 3.3125
+            "time": 5.5,
+            "DrumType": 0
         },
         {
-            "time": 3.875
+            "time": 5.8125,
+            "DrumType": 0
         },
         {
-            "time": 6.25
+            "time": 6.25,
+            "DrumType": 0
         },
         {
-            "time": 6.4375
+            "time": 13.5625,
+            "DrumType": 0
         },
         {
-            "time": 6.6875
+            "time": 13.75,
+            "DrumType": 0
         },
         {
-            "time": 6.875
+            "time": 14.25,
+            "DrumType": 0
         },
         {
-            "time": 7.125
+            "time": 14.75,
+            "DrumType": 0
+        },
+        {
+            "time": 15.1875,
+            "DrumType": 0
+        },
+        {
+            "time": 21.25,
+            "DrumType": 0
+        },
+        {
+            "time": 21.5,
+            "DrumType": 0
+        },
+        {
+            "time": 22.0,
+            "DrumType": 0
+        },
+        {
+            "time": 22.4375,
+            "DrumType": 0
+        },
+        {
+            "time": 22.9375,
+            "DrumType": 0
+        },
+        {
+            "time": 29.0,
+            "DrumType": 0
+        },
+        {
+            "time": 29.5625,
+            "DrumType": 0
+        },
+        {
+            "time": 30.5625,
+            "DrumType": 0
+        },
+        {
+            "time": 31.0,
+            "DrumType": 0
+        },
+        {
+            "time": 36.875,
+            "DrumType": 0
+        },
+        {
+            "time": 37.1875,
+            "DrumType": 0
+        },
+        {
+            "time": 38.125,
+            "DrumType": 0
+        },
+        {
+            "time": 41.125,
+            "DrumType": 0
+        },
+        {
+            "time": 41.375,
+            "DrumType": 0
+        },
+        {
+            "time": 45.0,
+            "DrumType": 0
+        },
+        {
+            "time": 45.25,
+            "DrumType": 0
+        },
+        {
+            "time": 47.125,
+            "DrumType": 0
+        },
+        {
+            "time": 47.625,
+            "DrumType": 0
+        },
+        {
+            "time": 53.0,
+            "DrumType": 0
+        },
+        {
+            "time": 53.25,
+            "DrumType": 0
+        },
+        {
+            "time": 53.75,
+            "DrumType": 0
+        },
+        {
+            "time": 55.25,
+            "DrumType": 0
+        },
+        {
+            "time": 55.75,
+            "DrumType": 0
+        },
+        {
+            "time": 56.25,
+            "DrumType": 0
+        },
+        {
+            "time": 58.25,
+            "DrumType": 0
+        },
+        {
+            "time": 58.6875,
+            "DrumType": 0
+        },
+        {
+            "time": 64.5,
+            "DrumType": 0
         }
     ],
     "rightNotes": [
         {
-            "time": 2.875
+            "time": 1.5,
+            "DrumType": 1
         },
         {
-            "time": 4.3125
+            "time": 2.0625,
+            "DrumType": 1
         },
         {
-            "time": 7.6875
+            "time": 9.75,
+            "DrumType": 1
         },
         {
-            "time": 7.875
+            "time": 10.25,
+            "DrumType": 1
         },
         {
-            "time": 8.0625
+            "time": 17.8125,
+            "DrumType": 1
         },
         {
-            "time": 8.25
+            "time": 18.3125,
+            "DrumType": 1
+        },
+        {
+            "time": 25.8125,
+            "DrumType": 1
+        },
+        {
+            "time": 26.3125,
+            "DrumType": 1
+        },
+        {
+            "time": 29.25,
+            "DrumType": 1
+        },
+        {
+            "time": 30.0625,
+            "DrumType": 1
+        },
+        {
+            "time": 31.5,
+            "DrumType": 1
+        },
+        {
+            "time": 32.0,
+            "DrumType": 1
+        },
+        {
+            "time": 33.6875,
+            "DrumType": 1
+        },
+        {
+            "time": 34.25,
+            "DrumType": 1
+        },
+        {
+            "time": 37.6875,
+            "DrumType": 1
+        },
+        {
+            "time": 38.5625,
+            "DrumType": 1
+        },
+        {
+            "time": 41.8125,
+            "DrumType": 1
+        },
+        {
+            "time": 45.6875,
+            "DrumType": 1
+        },
+        {
+            "time": 46.1875,
+            "DrumType": 1
+        },
+        {
+            "time": 46.6875,
+            "DrumType": 1
+        },
+        {
+            "time": 48.125,
+            "DrumType": 1
+        },
+        {
+            "time": 49.8125,
+            "DrumType": 1
+        },
+        {
+            "time": 50.3125,
+            "DrumType": 1
+        },
+        {
+            "time": 54.25,
+            "DrumType": 1
+        },
+        {
+            "time": 54.6875,
+            "DrumType": 1
+        },
+        {
+            "time": 55.4375,
+            "DrumType": 1
+        },
+        {
+            "time": 56.0,
+            "DrumType": 1
+        },
+        {
+            "time": 56.6875,
+            "DrumType": 1
+        },
+        {
+            "time": 61.5625,
+            "DrumType": 1
+        },
+        {
+            "time": 61.8125,
+            "DrumType": 1
+        },
+        {
+            "time": 62.0625,
+            "DrumType": 1
+        },
+        {
+            "time": 62.5625,
+            "DrumType": 1
+        },
+        {
+            "time": 63.0625,
+            "DrumType": 1
+        },
+        {
+            "time": 63.25,
+            "DrumType": 1
+        },
+        {
+            "time": 63.5,
+            "DrumType": 1
+        },
+        {
+            "time": 63.75,
+            "DrumType": 1
+        },
+        {
+            "time": 64.0,
+            "DrumType": 1
         }
     ],
-    "duration": 8.9399995803833
+    "duration": 66.54000091552735
 }

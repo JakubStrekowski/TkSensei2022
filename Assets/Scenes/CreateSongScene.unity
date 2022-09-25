@@ -1058,6 +1058,7 @@ MonoBehaviour:
   songCreator: {fileID: 1418258612}
   songPresenter: {fileID: 1878876480}
   audioPlayer: {fileID: 856229167}
+  shamanSwitch: {fileID: 0}
 --- !u!114 &1418258614
 MonoBehaviour:
   m_ObjectHideFlags: 0

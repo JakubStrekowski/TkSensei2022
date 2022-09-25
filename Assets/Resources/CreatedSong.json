@@ -1,46 +1,47 @@
 {
     "leftNotes": [
         {
-            "time": 3.3125
+            "time": 1.75,
+            "DrumType": 0
         },
         {
-            "time": 3.875
+            "time": 2.0,
+            "DrumType": 0
         },
         {
-            "time": 6.25
+            "time": 2.25,
+            "DrumType": 0
         },
         {
-            "time": 6.4375
+            "time": 3.125,
+            "DrumType": 0
         },
         {
-            "time": 6.6875
-        },
-        {
-            "time": 6.875
-        },
-        {
-            "time": 7.125
+            "time": 3.5625,
+            "DrumType": 0
         }
     ],
     "rightNotes": [
         {
-            "time": 2.875
+            "time": 1.8125,
+            "DrumType": 1
         },
         {
-            "time": 4.3125
+            "time": 2.25,
+            "DrumType": 1
         },
         {
-            "time": 7.6875
+            "time": 2.25,
+            "DrumType": 1
         },
         {
-            "time": 7.875
+            "time": 3.25,
+            "DrumType": 1
         },
         {
-            "time": 8.0625
-        },
-        {
-            "time": 8.25
+            "time": 3.5625,
+            "DrumType": 1
         }
     ],
-    "duration": 8.9399995803833
+    "duration": 3.9599997997283937
 }

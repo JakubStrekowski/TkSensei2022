@@ -6,19 +6,24 @@ public class EvilSpirit : MonoBehaviour
 {
     public Sprite[] sprites;
     [SerializeField] PointCounter pointCounter;
+    AudioSource audioSrc; 
 
     private SpriteRenderer sr;
     private Vector3 originalPos;
     private int currentState = 0;
 
+    public AudioClip[] ghostSounds;
+
     private void Awake() 
     {
         sr = GetComponent<SpriteRenderer>();
+        audioSrc = GetComponent<AudioSource>();
     }
 
     private void Start() 
     {
         originalPos = transform.position;
+        audioSrc.PlayOneShot(ghostSounds[0]);
     }
 
     public void Update()
@@ -27,6 +32,7 @@ public class EvilSpirit : MonoBehaviour
         {
             if (pointCounter.RatioScore > 0.5f)
             {
+                audioSrc.PlayOneShot(ghostSounds[1]);
                 SetState(1);
             }
         }
@@ -35,6 +41,7 @@ public class EvilSpirit : MonoBehaviour
         {
             if (pointCounter.RatioScore > 0.75f)
             {
+                audioSrc.PlayOneShot(ghostSounds[2]);
                 SetState(2);
             }
         }
