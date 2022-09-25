@@ -98,5 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PerfectSprite: {fileID: 21300000, guid: 32e624e70e18a4ecaa9eee8d49914f21, type: 3}
-  GoodSprite: {fileID: 21300000, guid: da32d9f1942864d46abb894774b41a6c, type: 3}
+  GoodSprite: {fileID: 21300000, guid: 32e624e70e18a4ecaa9eee8d49914f21, type: 3}
   SkippedSprite: {fileID: 21300000, guid: f7269a7591d3e451788345fffc81275a, type: 3}

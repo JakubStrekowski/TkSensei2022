@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PointCountConfig
   m_EditorClassIdentifier: 
   PerfectNoteScore: 5
-  GoodNoteScore: 3
+  GoodNoteScore: 5
   MissedNoteScore: -1
   SkippedNoteScore: -2
