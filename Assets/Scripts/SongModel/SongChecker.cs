@@ -4,6 +4,7 @@ using System.IO;
 using Points;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SongChecker : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class SongChecker : MonoBehaviour
     public TMP_InputField nameInput;
     public GameObject submitPanel;
     public GameObject highScorePanel;
+
+    public UnityEvent OnPerfect, OnGood;
+    public UnityEvent OnMiss;
 
     private void Awake() 
     {
@@ -58,6 +62,7 @@ public class SongChecker : MonoBehaviour
         {
             Debug.Log("Missed: " + Time.timeSinceLevelLoad + " vs. " + "no more notes");
             pointCounter.RegisterMissedNote();
+            OnMiss.Invoke();
             return;
         }
 
@@ -69,6 +74,7 @@ public class SongChecker : MonoBehaviour
                 Debug.Log("Perfect: " + Time.timeSinceLevelLoad + " vs. " + currentNotes[(int)drumType].time);
                 currentNotes[(int)drumType].OnCorrect();
                 FindNextNote(drumType);
+                OnPerfect.Invoke();
             }
         else 
         {
@@ -80,6 +86,7 @@ public class SongChecker : MonoBehaviour
                 Debug.Log("Good: " + Time.timeSinceLevelLoad + " vs. " + currentNotes[(int)drumType].time);
                 currentNotes[(int)drumType].OnGood();
                 FindNextNote(drumType);
+                OnGood.Invoke();
             }
             else if (!(Time.timeSinceLevelLoad < currentNotes[(int)drumType].time + difficultySO.eagerThreshold))
             {
@@ -87,11 +94,13 @@ public class SongChecker : MonoBehaviour
                 Debug.Log("Missed: " + Time.timeSinceLevelLoad + " vs. " + currentNotes[(int)drumType].time);
                 currentNotes[(int)drumType].OnIncorrect();
                 FindNextNote(drumType);
+                OnMiss.Invoke();
             }
             else
             {
                 pointCounter.RegisterMissedNote();
                 Debug.Log("Missed: " + Time.timeSinceLevelLoad + " vs. " + currentNotes[(int)drumType].time);
+                OnMiss.Invoke();
             }
         }
     }
