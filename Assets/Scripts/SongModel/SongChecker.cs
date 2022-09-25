@@ -78,7 +78,7 @@ public class SongChecker : MonoBehaviour
                 pointCounter.RegisterGoodNote();
                 currentNotes[(int)drumType].isHit = true;
                 Debug.Log("Good: " + Time.timeSinceLevelLoad + " vs. " + currentNotes[(int)drumType].time);
-                currentNotes[(int)drumType].OnCorrect();
+                currentNotes[(int)drumType].OnGood();
                 FindNextNote(drumType);
             }
             else if (!(Time.timeSinceLevelLoad < currentNotes[(int)drumType].time + difficultySO.eagerThreshold))

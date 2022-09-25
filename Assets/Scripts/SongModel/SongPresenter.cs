@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SongModel;
 using UnityEngine;
 
 public enum EScrollDirection
@@ -38,7 +39,9 @@ public class SongPresenter : MonoBehaviour
                     leftNotesParent.position.z), 
                 Quaternion.identity, 
                 leftNotesParent);
+            note.DrumType = EDrumType.Left;
             note.presenterReference = newObj.GetComponent<SpriteRenderer>();
+            note.noteData = newObj.GetComponent<NoteData>();
         }
         foreach (Note note in song.rightNotes)
         {
@@ -50,7 +53,9 @@ public class SongPresenter : MonoBehaviour
                     rightNotesParent.position.z), 
                 Quaternion.identity, 
                 rightNotesParent);
+            note.DrumType = EDrumType.Right;
             note.presenterReference = newObj.GetComponent<SpriteRenderer>();
+            note.noteData = newObj.GetComponent<NoteData>();
         }
     }
 
@@ -67,7 +72,9 @@ public class SongPresenter : MonoBehaviour
                         leftNotesParent.position.z), 
                     Quaternion.identity, 
                     leftNotesParent);
+                note.DrumType = EDrumType.Left;
                 note.presenterReference = newObj.GetComponent<SpriteRenderer>();
+                note.noteData = newObj.GetComponent<NoteData>();
                 break;
             case EDrumType.Right:
                 newObj = Instantiate(rightNotePrefab, 
@@ -77,7 +84,9 @@ public class SongPresenter : MonoBehaviour
                         rightNotesParent.position.z), 
                     Quaternion.identity, 
                     rightNotesParent);
+                note.DrumType = EDrumType.Right;
                 note.presenterReference = newObj.GetComponent<SpriteRenderer>();
+                note.noteData = newObj.GetComponent<NoteData>();
                 break;
         }
     }

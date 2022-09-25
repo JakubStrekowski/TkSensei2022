@@ -15,16 +15,16 @@ public class SongCreator : MonoBehaviour
         Note note;
         switch(drumType)
         {
-            default:
             case EDrumType.Left:
             {
-                note = new Note(Mathf.Round(Time.timeSinceLevelLoad * 16) / 16);
+                note = new Note(Mathf.Round(Time.timeSinceLevelLoad * 16) / 16, EDrumType.Left);
                 song.leftNotes.Add(note);
                 break;
             }
+            default:
             case EDrumType.Right:
             {
-                note = new Note(Mathf.Round(Time.timeSinceLevelLoad * 16) / 16);
+                note = new Note(Mathf.Round(Time.timeSinceLevelLoad * 16) / 16, EDrumType.Right);
                 song.rightNotes.Add(note);
                 break;
             }
