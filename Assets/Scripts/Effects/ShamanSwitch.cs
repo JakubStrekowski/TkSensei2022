@@ -21,5 +21,6 @@ public class ShamanSwitch : MonoBehaviour
         currentId = (currentId + 1) % sprites.Length;
         sr.sprite = sprites[currentId];
         flashSprites[currentId].Flash();
+        GetComponent<PerlinShake>().Shake();
     }
 }
