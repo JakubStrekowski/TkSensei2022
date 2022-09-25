@@ -9,11 +9,8 @@ public class EvilSpirit : MonoBehaviour
 
     private SpriteRenderer sr;
     private Vector3 originalPos;
+    private int currentState = 0;
 
-    private void SetSprite(int id)
-    {
-        sr.sprite = sprites[id];
-    }
     private void Awake() 
     {
         sr = GetComponent<SpriteRenderer>();
@@ -26,17 +23,20 @@ public class EvilSpirit : MonoBehaviour
 
     public void Update()
     {
-        if (pointCounter.RatioScore < 0.5)
+        if (currentState == 0)
         {
-            SetSprite(0);
+            if (pointCounter.RatioScore > 0.5f)
+            {
+                SetState(1);
+            }
         }
-        else if (pointCounter.RatioScore < 0.75)
+
+        if (currentState == 1)
         {
-            SetSprite(1);
-        }
-        else
-        {
-            SetSprite(2);
+            if (pointCounter.RatioScore > 0.75f)
+            {
+                SetState(2);
+            }
         }
 
         sr.color = new Color(1, 1, 1, 
@@ -49,4 +49,33 @@ public class EvilSpirit : MonoBehaviour
         );
     }
 
+    public void SetState(int id)
+    {
+        StopCoroutine(nameof(ChangeState));
+        StartCoroutine(nameof(ChangeState), id);
+    }
+
+    private IEnumerator ChangeState(int id)
+    {
+        float elapsedTime = 0f;
+        Color transparent = new Color(1, 1, 1, 0);
+        Color lastColor = sr.color;
+        currentState = id;
+
+        while(elapsedTime < 0.75f)
+        {
+            elapsedTime += Time.deltaTime;
+            sr.color = Color.Lerp(lastColor, transparent, elapsedTime / 0.75f);
+            yield return null;
+        }
+
+        sr.sprite = sprites[id];
+        
+        while(elapsedTime < 1.5f)
+        {
+            elapsedTime += Time.deltaTime;
+            sr.color = Color.Lerp(transparent, lastColor, elapsedTime / 1.5f);
+            yield return null;
+        }
+    }
 }
